@@ -6,6 +6,7 @@ def generate_response_image(img_path: str) -> str:
 
     instructions = (
         "Extract this receipt into JSON only. "
+        "Always return valid JSON with double quotes for property names and string values."
         "Format: {'items': [{'name': 'example', 'price': 0.0}], 'subtotal': 0.0, 'tax': 0.0, 'total': 0.0}"   
     )
 
