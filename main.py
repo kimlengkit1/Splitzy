@@ -1,10 +1,26 @@
 import json
 from services.gemini_service import generate_response_image
-from services.receipt_parser import parse_receipt
-from services.splitter import even_split, item_split
+from services.receipt_parser import parse_receipt, parse_split_response
+from services.splitter import even_split, smart_split, continue_smart_split
+
+def ai_suggestion(receipt_data: dict, num_people: int):
+    chat = smart_split(receipt_data, num_people)
+
+    # force gemini to initiate the chat
+    ai_response = continue_smart_split(chat, 
+        "Start by asking clarifying question. One at a time. Tell the user one time that they can exit the chat by saying done or exit.")
+    print("Splitzy:", ai_response)
+
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() in ["done", "exit"]:
+            break
+        ai_response = continue_smart_split(chat, user_input)
+        print("Splitzy", ai_response)
+
 
 def main():
-    img_path = "examples/Example1.jpg" 
+    img_path = "examples/Example3.jpg" 
 
     # will add an upload feature later
 
@@ -17,17 +33,31 @@ def main():
     
     print("Parsed Receipt Data:", json.dumps(receipt_data, indent=2))
 
-    num_people = 3
+    # ask for how many people to split
+    while True:
+        num_people = input("How many people to split the bill? ")
+        if num_people.isdigit() and int(num_people) > 0:
+            num_people = int(num_people)
+            break
+        else:
+            print("Please enter a valid positive integer.")
 
-    print(even_split(receipt_data, num_people))
+    valid_method = [1, 2]
+    while True:
+        split_method = input("Split method: \n1. evenly \n2.smart_ai \nInput the integer corresponding to the choice: ")
+        if split_method.isdigit() and int(split_method) in valid_method:
+            split_method = int(num_people)
+            break
+        else:
+            print("Please enter a valid positive integer.")
 
-    assignments = {
-        1: [receipt_data["items"][0]["name"]],
-        2: [receipt_data["items"][1]["name"]],
-        3: [item["name"] for item in receipt_data["items"][2:]],
-    }
-    print(item_split(receipt_data, assignments))
+    if split_method == 1:
+        result = even_split(receipt_data, num_people)
+        print("Even Split Result:", json.dumps(result, indent=2))
+    elif split_method == 2:
+        ai_suggestion(receipt_data, num_people)
 
+        
 
 if __name__ == "__main__":
     main()
