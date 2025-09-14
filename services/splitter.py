@@ -16,6 +16,7 @@ def smart_split(receipt_data: dict, num_people: int):
             "role": "user",
             "parts": [
                 "You are a bill-splitting assistant. "
+                "Explain to the user how you would best split the bill. Follow instructions from the user"
                 "Ask clarifying questions about who ordered what items "
                 "before suggesting a split. "
                 "When asking, be specific about item"

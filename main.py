@@ -20,7 +20,9 @@ def ai_suggestion(receipt_data: dict, num_people: int):
 
 
 def main():
-    img_path = "examples/Example3.jpg" 
+
+    # Change the image here
+    img_path = "examples/Example1.jpg" 
 
     # will add an upload feature later
 
@@ -44,9 +46,9 @@ def main():
 
     valid_method = [1, 2]
     while True:
-        split_method = input("Split method: \n1. evenly \n2.smart_ai \nInput the integer corresponding to the choice: ")
+        split_method = input("Split method: \n1. Evenly \n2. Smart_ai \nInput the integer corresponding to the choice: ")
         if split_method.isdigit() and int(split_method) in valid_method:
-            split_method = int(num_people)
+            split_method = int(split_method)
             break
         else:
             print("Please enter a valid positive integer.")
@@ -57,7 +59,6 @@ def main():
     elif split_method == 2:
         ai_suggestion(receipt_data, num_people)
 
-        
 
 if __name__ == "__main__":
     main()
