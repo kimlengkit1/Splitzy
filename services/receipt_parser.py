@@ -14,3 +14,12 @@ def parse_receipt(response: str):
             print("Failed to parse receipt JSON:", e)
             print("Raw response was:", cleaned)
         return None
+    
+def parse_split_response(raw: str):
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        try:
+            return ast.literal_eval(raw)
+        except Exception:
+            return {"error": "Failed to parse smart_split response", "raw": raw}
