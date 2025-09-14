@@ -17,6 +17,17 @@ Instead of squinting at crumpling paper paper or fighting over who ordered guac,
 ## The Goal
 Make splitting receipts fast, fair, and fun, so you can go back to enjoying the company of your friends and loved ones, not the calculator.
 
-# Other Notes
+# Other Notes 
 
-I ran this using the isolated environment instead of my system Python. Need to activate it every time I open a new terminal, so use ``source .venv/bin/activate``. Type ``deactivate`` when done.
+## Installation instruction
+
+I ran this using the isolated environment instead of my system Python. To create a virtual environment: ``python -m venv .venv``
+
+Need to activate it every time a new terminal is open, so use ``source .venv/bin/activate``. 
+
+To install the dependencies, use ``pip install -r requirements.txt``.
+
+As a sanity check, run ``pip list`` and look for google-generativeai, pillow, and python-dotenv.
+
+Type ``deactivate`` when ready to exit.
+
