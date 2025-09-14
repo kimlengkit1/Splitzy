@@ -37,5 +37,8 @@ ENV/
 *.class
 *.out
 
+
 # Jupyter notebooks checkpoints (if you add notebooks later)
 .ipynb_checkpoints/
+
+.env
