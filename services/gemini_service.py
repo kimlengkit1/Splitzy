@@ -5,8 +5,12 @@ def generate_response_image(img_path: str) -> str:
     img = PIL.Image.open(img_path)
 
     instructions = (
-        "Extract this receipt into JSON only. "
-        "Always return valid JSON with double quotes for property names and string values."
+        "Return JSON only."
+        "List each item separately (no stacking). "
+        "Apply discounts to items (final price only)"
+        "Don't add items with negative number to the JSON. that's a discount"
+        "Split stacked names like '2 Md Ice Cof' into separate entries."
+        "Any negative is a discount on the item above it"
         "Format: {'items': [{'name': 'example', 'price': 0.0}], 'subtotal': 0.0, 'tax': 0.0, 'total': 0.0}"   
     )
 
