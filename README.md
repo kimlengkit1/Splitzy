@@ -33,3 +33,6 @@ Type ``deactivate`` when ready to exit.
 
 To run the program, type ``python main.py`` or ``python3 main.py``.
 
+
+You will need a key, make a .env file in the root of the repo, and add "API_KEY=[keys]" for Gemini to work.
+[Click to get an API key for Gemini ](https://aistudio.google.com/app/apikey)
