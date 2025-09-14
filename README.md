@@ -31,3 +31,5 @@ As a sanity check, run ``pip list`` and look for google-generativeai, pillow, an
 
 Type ``deactivate`` when ready to exit.
 
+To run the program, type ``python main.py`` or ``python3 main.py``.
+
