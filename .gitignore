@@ -1,0 +1,41 @@
+# Python cache & build files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS system files
+.DS_Store
+
+# Object / compiled files
+*.o
+*.obj
+*.dll
+*.class
+*.out
+
+# Jupyter notebooks checkpoints (if you add notebooks later)
+.ipynb_checkpoints/
