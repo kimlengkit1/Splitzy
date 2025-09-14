@@ -2,7 +2,7 @@
 
 "Because math is hard."
 
-AI-powered receipt reader and bill-splitting app to make group payments effortless. Just snap a photo or upload a screenshot of your receipt, and it will itemize every purchase using AI. No more typing line by line because everything is extracted automatically.
+AI-powered receipt reader and bill-splitting app to make group payments effortless. Upload a screenshot of your receipt, and it will itemize every purchase using AI. No more typing line by line because everything is extracted automatically.
 
 ## What is it?
 Instead of squinting at crumpling paper or fighting over who ordered guac, just snap a pic of the receipt and let our AI do the work.
