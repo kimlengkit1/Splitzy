@@ -11,7 +11,7 @@ generation_config = {
     "top_p": 0.95, # nucleus sampling -> more flexibility in recognizing weird names
     "top_k": 64, # look at top 64 possible words
     "max_output_tokens": 8192, # max tokens
-    "response_mime_type": "text/plain", # json
+    #"response_mime_type": "text/plain", # json
 }
 
 safety_settings = [
@@ -23,7 +23,7 @@ safety_settings = [
 
 # model setup
 model = genai.GenerativeModel(
-    model_name="gemini-1.5-pro",
+    model_name="gemini-1.5-flash",
     generation_config=generation_config,
     safety_settings=safety_settings,
     system_instruction=(
